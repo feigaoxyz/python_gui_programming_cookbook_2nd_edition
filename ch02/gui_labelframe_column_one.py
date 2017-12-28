@@ -76,8 +76,16 @@ for col in range(3):
 # ScrolledText widget
 scroll_w = 30
 scroll_h = 3
-scr = scrolledtext.ScrolledText(win, width=scroll_w, height=scroll_h, wrap=tk.WORD)
-scr.grid(column=0, columnspan=3)
+scr = scrolledtext.ScrolledText(
+    win,
+    width=scroll_w, height=scroll_h,
+    wrap=tk.WORD
+)
+scr.grid(
+    row=6, column=0,
+    columnspan=3,
+    sticky='WE'
+)
 
 # create a container to hold labels
 buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')
