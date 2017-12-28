@@ -84,9 +84,14 @@ buttons_frame = ttk.LabelFrame(win, text=' Labels in a Frame ')
 buttons_frame.grid(row=7, column=0)
 
 # place labels into the container element
-ttk.Label(buttons_frame, text='Label 1').grid(row=0, column=0, sticky=tk.W)
-ttk.Label(buttons_frame, text='Label 2').grid(row=0, column=1, sticky=tk.W)
-ttk.Label(buttons_frame, text='Label 3').grid(row=0, column=2, sticky=tk.W)
+for col in range(3):
+    ttk.Label(
+        buttons_frame,  # notice the parent
+        text=f'Label {col+1}'
+    ).grid(
+        row=col, column=0,
+        sticky=tk.W
+    )
 
 # set cursor focus
 name_entered.focus()
