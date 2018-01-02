@@ -1,7 +1,7 @@
 import os
 
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class LogLevel:
@@ -31,6 +31,9 @@ class Logger:
             log_file.write(self.get_datetime() + '\t\t*** Starting Test ***\n')
 
     def get_datetime(self):
+        fmt_str = '%Y-%m-%d %H:%M:%S %Z%z'
+        utc = datetime.now(timezone('UTC'))
+
         return str(datetime.now())
 
     def write_to_log(self, msg='', loglevel=LogLevel.DEBUG):

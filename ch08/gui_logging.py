@@ -444,7 +444,10 @@ class OOP():
     # ======================
 
 
-# Start GUI
-# ======================
-oop = OOP()
-oop.win.mainloop()
+if __name__ == '__main__':
+    # Start GUI
+    # ======================
+    oop = OOP()
+    print(oop.log)
+    oop.log.write_to_log('Test message')
+    oop.win.mainloop()
